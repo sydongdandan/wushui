@@ -1399,7 +1399,6 @@ ul.map_sel {
     color: #c27b00;font-size:14px;padding-top:20px;
 }
 .s-detail-li span font {
-    color: rgba(255,255,255)
-}
+    color: rgba(255,255,255,1);}
 .ico{position:relative;top:17px;left:11px}
 .ico span{position:relative;left:-26px;top:-12px;display:inline-block;background:#fff;border:1px solid #eee;font-size:11px;min-width:62px;line-height:11px;text-align:center;border-radius:3px;padding:3px 3px;color:#3993f8}
