@@ -3,12 +3,16 @@
     ViewData["Title"] = "列表页";
     ViewData["list"] = "on";
 }
-@model IEnumerable<WisdomWaterServicePlatform.Models.Wushui>
 <div class="w-list">
+    <ul class="s-nav wb">
+        <li class="active wbw s-nava"><a href="#">全部</a></li>
+        <li class="wbw s-navb"><a href="#">二次供水</a></li>
+        <li class="wbw s-navc"><a href="#">污水</a></li>
+    </ul>
     <ul class="w-listul">
 
         @Html.Partial("~/Views/Sypumps/ForAlarmList.cshtml")
-        
+
     </ul>
     <div class="w-listnull"></div>
 </div>
@@ -24,6 +28,7 @@
             success: function (detail) {
                 //alert("操作成功");
                 $(".w-listul").html(detail);
+                notice();
                 // console.log(jsonStr);
             }, error: function () {
                 //alert("a");
@@ -35,17 +40,31 @@
         var l = $(".w-listul li").length;
         if (l < 1) {
             $(".w-listnull")[0].innerHTML = "亲，暂时没有报警哦!";
-        //alert(l);
+            //alert(l);
             //alert("qwe");
+        } else {
+            $(".w-listnull")[0].innerHTML = "";
         }
     }
     $(function () {
         setInterval(function () {
             //name = getQueryString('name');
             listfull();
-            notice();
+            
         }, 10000);//8秒自动刷新
     })
     
-    notice()
+    notice();
+    $(".s-nav li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        
+    })
+    $(".s-navb").click(function () {
+        $(".w-listul").addClass("navws");
+        $(".w-listul").removeClass("naveg");
+    })
+    $(".s-navc").click(function () {
+        $(".w-listul").addClass("naveg");
+        $(".w-listul").removeClass("navws");
+    })
 </script>

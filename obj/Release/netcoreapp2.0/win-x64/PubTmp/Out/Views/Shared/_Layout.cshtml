@@ -5,19 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
     <title>@ViewData["Title"] </title>
-
-    <environment include="Development">
-        <link rel="stylesheet" href="@Url.Content("~/css/css.css")" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-
-    </environment>
+    <link rel="stylesheet" href="@Url.Content("~/css/css.css")" />
 </head>
 <body>
+    <script src="~/js/jquery.min.js"></script>
     <header class="d-head @ViewData["show"]">
         <span onClick="window.history.go(-1)" class="back"></span>
         <h1>安徽舜禹水务</h1>
@@ -30,18 +21,29 @@
     </div>
     <footer class="d-footer @ViewData["show"]">
         <ul class="wb d-footerul">
+            <li class="icoa wbw d-footerli @ViewData[" active"] ">
+                <a href="/Sypumps/Index"><img src="~/img/home.png" /></a>
+            </li>
+            <li class="icob wbw d-footerli @ViewData[" list"]">
+                <a href="/Sypumps/alarmList"><img src="~/img/notice.png" /></a>
+            </li>
+
+            <!--<li class="icod"><a href="#"></a></li>-->
+        </ul>
+
+    </footer>
+    <!--<footer class="d-footer @ViewData["show"]">
+        <ul class="wb d-footerul">
             <li class="icoa wbw d-footerli @ViewData["active"] ">
                 <a href="/"><img src="~/img/home.png" /></a>
             </li>
             <li class="icob wbw d-footerli @ViewData["list"]">
-                <a href="/Sypumps/Main"><img src="~/img/renwu.png" /></a>
+                <a href="/Sypumps/Main"><img src="~/img/notice.png" /></a>
             </li>
             <li class="icoc wbw d-footerli @ViewData["my-menu"]">
                 <a href="/Sypumps/My"><img src="~/img/my.png" /></a>
             </li>
-            <!--<li class="icod"><a href="#"></a></li>-->
-        </ul>
-
+    </ul>-->
     </footer>
 
     <environment exclude="Development">

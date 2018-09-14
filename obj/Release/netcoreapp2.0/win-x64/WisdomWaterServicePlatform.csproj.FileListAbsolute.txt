@@ -12,3 +12,17 @@ D:\工作桌面\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\Wis
 D:\工作桌面\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.AssemblyInfo.cs
 D:\工作桌面\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.dll
 D:\工作桌面\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.pdb
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\hostpolicy.dll
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\hostfxr.dll
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.exe
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.deps.json
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.runtimeconfig.json
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.runtimeconfig.dev.json
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.dll
+C:\soft\vue\WisdomWaterServicePlatform\bin\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.pdb
+C:\soft\vue\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.csprojAssemblyReference.cache
+C:\soft\vue\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.csproj.CoreCompileInputs.cache
+C:\soft\vue\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.AssemblyInfoInputs.cache
+C:\soft\vue\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.AssemblyInfo.cs
+C:\soft\vue\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.dll
+C:\soft\vue\WisdomWaterServicePlatform\obj\Release\netcoreapp2.0\win-x64\WisdomWaterServicePlatform.pdb

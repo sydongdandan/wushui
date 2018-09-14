@@ -6,6 +6,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\WWWROOT\Csharp\.NET Core\APP</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\soft\vue\新建文件夹</_PublishTargetUrl>
   </PropertyGroup>
 </Project>

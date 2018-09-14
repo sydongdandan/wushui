@@ -3,31 +3,33 @@
     ViewData["Title"] = "Details";
     ViewData["active"] = "on";
 }
-@model WisdomWaterServicePlatform.Models.Wushui
+@model WisdomWaterServicePlatform.Models.Sypump
 <style type="text/css">
     .alarm {
-        color:red;
-        font-weight:bold;
+        color: red;
+        font-weight: bold;
     }
+
     .stop {
-        color:darkblue;
+        color: darkblue;
     }
+
     .run {
-        color:greenyellow;
+        color: greenyellow;
     }
- 
 </style>
 <div class="s-details">
     <div class="s-details-main">
+        
         <ul class="s-detail-ul clearfix2" id="searchBar">
-            @Html.Partial("~/Views/Default/ForDetails.cshtml")
+            @Html.Partial("~/Views/Default/ForecgsDetails.cshtml")
         </ul>
-            <div class="s-pic"><img src="~/img/wushui.jpg" /></div>
+        <div class="s-pic"><img src="~/img/device2.jpg" /></div>
     </div>
 
 </div>
 
-<script>
+<!--<script>
     function getQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
@@ -47,7 +49,7 @@
             success: function (detail) {
                 //alert("操作成功");
                 $("#searchBar").html(detail);
-                
+
             }, error: function () {
                 //alert("a");
                 //alert(type);
@@ -59,7 +61,7 @@
         setInterval(function () {
             name = getQueryString('name');
             detailfull();
-            
+
         }, 5000);//8秒自动刷新
     })
     //alert("a");
@@ -77,5 +79,4 @@
         }, 8000);//8秒自动刷新
     })*/
 </script>
-
-
+    -->

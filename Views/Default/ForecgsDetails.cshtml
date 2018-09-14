@@ -1,0 +1,196 @@
+﻿@{
+    Layout = null;
+}
+<!-- 主泵数量 -->
+<li class="s-detail-li"><span class="run"><i>@Model.zbsl</i><br /><font>m³/h</font><p>主泵数量</p></span></li>
+<!-- 辅泵数量 -->
+<li class="s-detail-li"><span class="run"><i>@Model.fbsl</i><br /><font>m³/h</font><p>辐泵数量</p></span></li>
+<!--1#主泵-->
+@if (Model.zbsl >= 1)
+{
+    <li class="one s-detail-li @if (Model.xx_1 == 1)
+        {
+            @:stop
+        }else if (Model.kkgz_1 == 1 || Model.bpgz_1 == 1)
+        {
+            @:alarm
+        }
+    ">
+        <span class="run">
+            @if (Model.bp_1 == 1)
+            {<i> 运行</i>}
+            @if (Model.xx_1 == 1)
+            {<i> 休息</i>}
+            @if (Model.kkgz_1 == 1 || Model.bpgz_1 == 1)
+            {<i> 故障</i>}<br/>
+            <font class="plone"></font>
+            <p>1#主泵</p>
+        </span>
+    </li>
+}
+<!--2#主泵-->
+@if (Model.zbsl >= 2)
+{
+    <li class="one s-detail-li 
+        @if (Model.xx_2 == 1)
+        {
+            @:stop
+        }else if (Model.kkgz_2 == 1 || Model.bpgz_2 == 1)
+        {
+            @:alarm
+        }
+        ">
+        <span class="run">
+            @if (Model.bp_2 == 1)
+            {<i> 运行</i>}
+            @if (Model.xx_2 == 1)
+            {<i> 休息</i>}
+            @if (Model.kkgz_2 == 1 || Model.bpgz_2 == 1)
+            {<i> 故障</i>}
+            <br />
+            <font class="plone"></font>
+            <p>2#主泵</p>
+        </span>
+    </li>
+}
+<!--3#主泵-->
+@if (Model.zbsl >= 3)
+{
+    <li class="one s-detail-li @if (Model.xx_3 == 1)
+        {
+            @:stop
+        }else if (Model.kkgz_3 == 1 || Model.bpgz_3 == 1)
+        {
+            @:alarm
+        }">
+        <span class="run">
+            @if (Model.bp_3 == 1)
+            {<i> 运行</i>}
+            @if (Model.xx_3 == 1)
+            {<i> 休息</i>}
+            @if (Model.kkgz_3 == 1 || Model.bpgz_3 == 1)
+            {<i> 故障</i>}
+            <br />
+            <font class="plone"></font>
+            <p>3#主泵</p>
+        </span>
+    </li>
+}
+<!-- 4#主泵 -->
+@if (Model.zbsl >= 4)
+{
+    <li class="one s-detail-li @if (Model.fb_xx_1 == 1)
+        {
+            @:stop
+        }else if (Model.kkgz_4 == 1 || Model.bpgz_4 == 1)
+        {
+            @:alarm
+        }">
+        <span class="run">
+            @if (Model.bp_4 == 1)
+            {<i> 运行</i>}
+            @if (Model.xx_4 == 1)
+            {<i> 休息</i>}
+            @if (Model.kkgz_4 == 1 || Model.bpgz_4 == 1)
+            {<i> 故障</i>}
+            <br />
+            <font class="plone"></font>
+            <p>4#主泵</p>
+        </span>
+    </li>
+}
+<!-- 辐主泵 -->
+    <li class="one s-detail-li  
+        @if (Model.fb_xx_1 == 1)
+        {
+            @:stop
+        }else if (Model.fb_kkgz_1 == 1 || Model.fb_bpgz_1 == 1)
+        {
+            @:alarm
+        }">
+        
+        <span class="run">
+            @if (Model.fb_bp_1 == 1)
+            {<i> 运行</i>}
+            @if (Model.fb_xx_1 == 1)
+            {<i> 休息</i>}
+            @if (Model.fb_kkgz_1 == 1 || Model.fb_bpgz_1 == 1)
+            {<i> 故障</i>}
+            <br />
+            <font class=""></font>
+            <p>辐泵</p>
+        </span>
+        </li>
+<!--前压力-->
+@if (Model.po_in != 0)
+{
+    <li class="s-detail-li"><span class="run"><i>@Model.Model.po_in</i><br /><font>Mpa</font><p>泵前压力</p></span></li>
+}
+<!--泵后压力-->
+<li class="s-detail-li"><span class="run"><i>@Model.po_out</i><br /><font>Mpa</font><p>泵后压力</p></span></li>
+<!--水箱水位-->
+<li class="s-detail-li"><span class="run"><i>@Model.sxsw</i><br /><font>m³</font><p>水箱水位</p></span></li>
+<!--出水瞬时流量-->
+<li class="s-detail-li"><span class="run"><i>@Model.ssll.ToString("F3")</i><br /><font>m³/h</font><p>出水瞬时流量</p></span></li>
+<!--出水累计流量-->
+<li class="s-detail-li"><span class="run"><i>@Model.ljll</i><br /><font>m³</font><p>出水累计流量</p></span></li>
+<!--电压ua-->
+<li class="s-detail-li"><span class="run"><i>@Model.ua</i><br /><font>v</font><p>电压UA</p></span></li>
+<!--电压ub-->
+<li class="s-detail-li"><span class="run"><i>@Model.ub</i><br /><font>v</font><p>电压UB</p></span></li>
+<!--电压uc-->
+<li class="s-detail-li"><span class="run"><i>@Model.uc</i><br /><font>v</font><p>电压UC</p></span></li>
+<!--电量IA-->
+<li class="s-detail-li"><span class="run"><i>@Model.ia</i><br /><font>v</font><p>电量IA</p></span></li>
+<!--电量IB-->
+<li class="s-detail-li"><span class="run"><i>@Model.ib</i><br /><font>v</font><p>电量IB</p></span></li>
+<!--电量IC-->
+<li class="s-detail-li"><span class="run"><i>@Model.ic</i><br /><font>v</font><p>电量IC</p></span></li>
+<!--前压力-->
+@if (Model.wsgz == 1)
+{
+    <li class="s-detail-li alarm"><span class="run"><i>故障</i><br /><font>Mpa</font><p>无水故障</p></span></li>
+}
+@if (Model.gsgz == 1)
+{
+    <li class="s-detail-li alarm"><span class="run"><i>故障</i><br /><font>Mpa</font><p>高水故障</p></span></li>
+}
+@if (Model.jsgz == 1)
+{
+    <li class="s-detail-li alarm"><span class="run"><i>故障</i><br /><font>Mpa</font><p>地面积水故障</p></span></li>
+}
+@if (Model.xxgz == 1)
+{
+    <li class="s-detail-li alarm"><span class="run"><i>故障</i><br /><font>Mpa</font><p>相序故障</p></span></li>
+}
+@if (Model.ckcy == 1)
+{
+    <li class="s-detail-li alarm"><span class="run"><i>故障</i><br /><font>Mpa</font><p>出口超压</p></span></li>
+}
+
+<script>
+    var arr = [@Model.pl1,@Model.pl2,@Model.pl3,@Model.pl4];
+    var newarr = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            newarr.push(arr[i]);
+    
+        }
+    }
+    
+    if (newarr.length > 1) {
+        for (var i = 0; i <= $(".plone").length; i++) {
+            $(".plone")[i].innerHTML =@Model.pl1;
+        }
+    } else {
+        for (var i = 0; i <= $(".one span").length;i++) {
+            if ($(".one span i")[i].innerHTML == " 运行") {
+                $(".one span font")[i].innerHTML = newarr[0]+'Hz';
+            }
+            //alert($(".one span i")[i].innerHTML == " 运行");
+
+        }
+    }
+    
+</script>
+

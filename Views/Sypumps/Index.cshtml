@@ -8,48 +8,65 @@
 
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=舜禹水务"></script>
 <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
-<div id="container"></div>
-<div id="myPageTop">
-    <div>
-        <input id="tipinput" value="" />
-        <input type="button" class="res" />
+<div class="map-main">
+    <div id="container"></div>
+    <div id="myPageTop">
+        <div>
+            <input id="tipinput" value="" />
+            <input type="button" class="res" />
+        </div>
+        <ul class="map_sel"></ul>
     </div>
-    <ul class="map_sel"></ul>
 </div>
+<div class="map-div">
+    <span class="ico-active m-icoa"><font>全部</font></span>
+    <span class=" m-icob"><font>二次<br/>供水</font></span>
+    <span class=" m-icoc"><font>污水</font></span>
 
+</div>
 
 <script>
     //初始化地图对象，加载地图
     var lnglats = [
 
-        { "center": "117.10009, 31.97019", "name": "义井社区东", "type": "2", "url": "?a=3", "id": "3" },
+        { "center": "117.10009, 31.97019", "name": "义井社区东", "type": "1", "url": "?a=3", "id": "3" },
+        { "center": "117.9009, 31.96019", "name": "舜禹展示间", "type": "2", "url": "?a=3", "id": "3" },
         
     ];
     function map() {
         var map = new AMap.Map("container", { resizeEnable: true, zoom: 7 });
         var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
         for (var i = 0, marker; i < lnglats.length; i++) {
-            var text = "<div class='ico'><img src='../img/mark_bs.png' style='width:20px;' /><span>" + lnglats[i].name +"</span>"+"</div>";
+            if (lnglats[i].type == 1) {
+                var text = "<div class='mico'><img src='../img/mark_bs1.png' style='width:20px;' /><span>" + lnglats[i].name + "</span>" + "</div>";
+            } else {
+                var text = "<div class='micoa'><img src='../img/mark_bs.png' style='width:20px;' /><span>" + lnglats[i].name + "</span>" + "</div>";
+            }
             var marker = new AMap.Marker({
                 content: text,
                 position: lnglats[i].center.split(','),
-                title: lnglats[i].type,
+                type: lnglats[i].type,
                 map: map
             });
-
+            //marker.setCity = lnglats[i].type;
             marker.content = lnglats[i].name;
-
-
-
+            marker.type = lnglats[i].type;
+            
             marker.on('click', markerClick);
         }
         function markerClick(e) {
             infoWindow.setContent(e.target.content);
-            //infoWindow.setUrl(e.target.url);
+            //infoWindow.setType(e.target.type);
             infoWindow.open(map, e.target.getPosition());
-            //alert(this.content);
+            
             //window.location.href = "/Default/Details?id=" + lnglats.length;
-            window.location.href = "/Default/Details?name=" + this.content;
+            //alert(this);
+            
+            if(this.type==1){
+                window.location.href = "/Default/Details?name=" + this.content;
+            }else{
+                window.location.href = "/Default/ecgsDetails?name=" + this.content;
+            }
         }
 
     }
@@ -67,7 +84,12 @@
         if (arr.length > 0) {
             var map_dom = "";
             for (i = 0; i < arr.length; i++) {
-                map_dom += "<li><img src='../img/mark_bs.png'/><h4>" + arr[i].name + "</h4></li>";
+                if (arr[i].type == 1) {
+                    map_dom += "<li class='ws'><img src='../img/mark_bs1.png'/><h4>" + arr[i].name + "</h4></li>";
+                } else {
+
+                    map_dom += "<li class='gs'><img src='../img/mark_bs.png'/><h4>" + arr[i].name + "</h4></li>";                }
+                
             }
             $(".map_sel")[0].innerHTML = map_dom;
         }
@@ -95,6 +117,27 @@
 
     //}
     map();
+    $(".map-div .m-icoa").click(function () {
+        $(this).addClass("ico-active").siblings().removeClass("ico-active");
+        $(".map-main").removeClass("containera");
+        $(".map-main").removeClass("containerb");
+        $(".map_sel").removeClass("map_sela");
+        $(".map_sel").removeClass("map_selb");
+    })
+    $(".map-div .m-icob").click(function () {
+        $(this).addClass("ico-active").siblings().removeClass("ico-active");
+        $(".map-main").addClass("containera");
+        $(".map-main").removeClass("containerb");
+        $(".map_sel").addClass("map_sela");
+        $(".map_sel").removeClass("map_selb");
+    })
+    $(".map-div .m-icoc").click(function () {
+        $(this).addClass("ico-active").siblings().removeClass("ico-active");
+        $(".map-main").removeClass("containera");
+        $(".map-main").addClass("containerb");
+        $(".map_sel").removeClass("map_sela");
+        $(".map_sel").addClass("map_selb");
+    })
 </script>
 
 

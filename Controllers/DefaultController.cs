@@ -34,8 +34,20 @@ namespace WisdomWaterServicePlatform.Controllers
             //return View(await _context.Sypump.ToListAsync());
 
         }
+        // 二次供水GET: Default/Details/5
+        public ActionResult ecgsDetails(string name, int id = 0)
+        {
+            if (string.IsNullOrEmpty(name))
+                return Redirect("../Sypumps/index");
+            //获取设备数据
+            var List = _context.Sypump.Where(x => x.name.Equals(name)).FirstOrDefault();
+            if (List == null) return Redirect("../Sypumps/index");
 
-        
+            return View(List);
+            //return View(await _context.Sypump.ToListAsync());
+
+        }
+
         public ActionResult ForDetails(string name, int id = 0)
         {
             try
@@ -51,6 +63,8 @@ namespace WisdomWaterServicePlatform.Controllers
                 return Json("Erorr："+e.Message);
             }
         }
+
+        
 
         // GET: Default/Create
         public ActionResult Create()

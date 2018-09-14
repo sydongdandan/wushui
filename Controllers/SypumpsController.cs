@@ -56,15 +56,39 @@ namespace WisdomWaterServicePlatform.Controllers
         public ActionResult AlarmList() {
 
             var List = _context.Syep.Where(x => x.fan1_fault==1||x.fan2_fault==1||x.hlb1_fault==1||x.hlb2_fault==1||x.tsb1_fault==1||x.tsb2_fault==1||x.wn1_fault==1||x.wn2_fault==1).ToList();
-            return View(List);
+            var Lista = _context.Sypump.Where(x => x.kkgz_1 == 1 || x.kkgz_2 == 1 || x.kkgz_3 == 1 || x.bpgz_1 == 1 || x.bpgz_2 == 1 || x.bpgz_3 == 1 || x.fb_kkgz_1 == 1 || x.fb_bpgz_1 == 1 || x.wsgz == 1 || x.gsgz == 1 || x.jsgz == 1 || x.xxgz == 1 || x.ckcy == 1).ToList();
+            ViewData["wushui"] = List;
+            ViewData["ergong"] = Lista;
+            return View();
         }
+        /*public ActionResult ERgong(string name) {
+            var list = _context.Sypump.Where(x=>x.ID.Equals()).ToList();
 
+        }*/
 
         public ActionResult ForAlarmList()
         {
             try 
             {
+                //var List = _context.Syep.Where(x => x.fan1_fault == 1 || x.fan2_fault == 1 || x.hlb1_fault == 1 || x.hlb2_fault == 1 || x.tsb1_fault == 1 || x.tsb2_fault == 1 || x.wn1_fault == 1 || x.wn2_fault == 1).ToList();
                 var List = _context.Syep.Where(x => x.fan1_fault == 1 || x.fan2_fault == 1 || x.hlb1_fault == 1 || x.hlb2_fault == 1 || x.tsb1_fault == 1 || x.tsb2_fault == 1 || x.wn1_fault == 1 || x.wn2_fault == 1).ToList();
+                var Lista = _context.Sypump.Where(x => x.kkgz_1 == 1 || x.kkgz_2 == 1 || x.kkgz_3 == 1 || x.bpgz_1 == 1 || x.bpgz_2 == 1 || x.bpgz_3 == 1 || x.fb_kkgz_1 == 1 || x.fb_bpgz_1 == 1 || x.wsgz == 1 || x.gsgz == 1 || x.jsgz == 1 || x.xxgz == 1 || x.ckcy == 1).ToList();
+                ViewData["wushui"] = List;
+                ViewData["ergong"] = Lista;
+                return View();
+            }
+            catch (Exception e)
+            {
+                return Json("Erorr：" + e.Message);
+            }
+        }
+        //二次供水
+        public ActionResult erForAlarmList()
+        {
+            try
+            {
+                //var List = _context.Syep.Where(x => x.fan1_fault == 1 || x.fan2_fault == 1 || x.hlb1_fault == 1 || x.hlb2_fault == 1 || x.tsb1_fault == 1 || x.tsb2_fault == 1 || x.wn1_fault == 1 || x.wn2_fault == 1).ToList();
+                var List = _context.Sypump.Where(x => x.kkgz_1 == 1 || x.kkgz_2 == 1 || x.kkgz_3 == 1 || x.bpgz_1 == 1 || x.bpgz_2 == 1 || x.bpgz_3 == 1 || x.fb_kkgz_1 == 1 || x.fb_bpgz_1 == 1 || x.wsgz == 1 || x.gsgz == 1 || x.jsgz == 1 || x.xxgz == 1 || x.ckcy == 1).ToList();
                 return View(List);
             }
             catch (Exception e)
@@ -72,7 +96,6 @@ namespace WisdomWaterServicePlatform.Controllers
                 return Json("Erorr：" + e.Message);
             }
         }
-
         // GET: Sypumps/Main
         public IActionResult Main()
         {

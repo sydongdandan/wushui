@@ -563,7 +563,7 @@ ul.d-footerul .on {
         }
 /*设备详情*/
 .s-details {
-    background: #0c6eb5;
+    background: #0075c4;
     box-sizing: border-box;
     position: absolute;
     top: 0px;
@@ -1400,5 +1400,44 @@ ul.map_sel {
 }
 .s-detail-li span font {
     color: rgba(255,255,255,1);}
-.ico{position:relative;top:17px;left:11px}
-.ico span{position:relative;left:-26px;top:-12px;display:inline-block;background:#fff;border:1px solid #eee;font-size:11px;min-width:62px;line-height:11px;text-align:center;border-radius:3px;padding:3px 3px;color:#3993f8}
+.micoa {
+    position: relative;
+    top: 17px;
+    left: 11px
+}
+.micoa span{position:relative;left:-26px;top:-12px;display:inline-block;background:#fff;border:1px solid #eee;font-size:11px;min-width:62px;line-height:11px;text-align:center;border-radius:3px;padding:3px 3px;color:#3993f8}
+.mico{position:relative;top:17px;left:11px}
+    .mico span {
+        position: relative;
+        left: -26px;
+        top: -12px;
+        display: inline-block;
+        background: #fff;
+        border: 1px solid #eee;
+        font-size: 11px;
+        min-width: 62px;
+        line-height: 11px;
+        text-align: center;
+        border-radius: 3px;
+        padding: 3px 3px;
+        color: #87c109
+    }
+.s-nav{padding:0px;margin:0px;text-align:center;padding:10px 0;background:#f2f2f2}
+.s-nav li a{display:inline-block;border:1px solid #eee;font-size:14px;color:#333;text-align:center;width:80%;height:30px;line-height:30px;background:#fff;border-radius:3px;}
+ .s-nav li.active a{background:#3993f8;color:#fff;border-color:#3993f8;color:#fff;}
+.navws .wushui{display:none;}
+.naveg .ergong{display:none;}
+/*.ico{display:none !important;}*/
+/*地图按钮*/
+.map-div{position:absolute;bottom:58px;left:4px;text-align:center;width:50px;}
+.map-div span{display:inline-block;width:40px;height:40px;background:rgba(0,0,0,.75);color:#fff;font-size:12px;line-height:38px;margin-bottom:2px;border-radius:3px;}
+.map-div span font{display:inline-block;vertical-align:middle;line-height:16px;}
+    .map-div span.ico-active {
+        background: #fe6000
+    }
+.containera .mico,.map_sela .ws {
+    display: none;
+}
+.containerb .micoa,.map_selb .gs {
+    display: none;
+}

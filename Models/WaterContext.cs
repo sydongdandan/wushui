@@ -19,8 +19,8 @@ namespace WisdomWaterServicePlatform
         {
             modelBuilder.Entity<Sypump>(m =>
             {
-                m.Property(n => n.sy1).HasMaxLength(20);//设置最大长度为50个字符
-                m.Property(n => n.sy2).HasMaxLength(20).IsRequired();//设置密码不可空且最大20个字符
+                m.Property(n => n.ssll).HasMaxLength(20);//设置最大长度为50个字符
+                m.Property(n => n.ljll).HasMaxLength(20).IsRequired();//设置密码不可空且最大20个字符
             });
             base.OnModelCreating(modelBuilder);
         }
