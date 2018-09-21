@@ -10,6 +10,7 @@
 <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
 <div class="map-main">
     <div id="container"></div>
+    <div id="panel"></div>
     <div id="myPageTop">
         <div>
             <input id="tipinput" value="" />
@@ -29,18 +30,29 @@
     //初始化地图对象，加载地图
     var lnglats = [
 
-        { "center": "117.10009, 31.97019", "name": "义井社区东", "type": "1", "url": "?a=3", "id": "3" },
-        { "center": "117.9009, 31.96019", "name": "舜禹展示间", "type": "2", "url": "?a=3", "id": "3" },
-        
+        { "center": "117.11015,32.290299", "name": "义井社区东", "type": "1", "url": "?a=3", "id": "3" },
+        { "center": "117.270204,31.968208", "name": "舜禹展示间", "type": "2", "url": "?a=3", "id": "3" },
+        { "center": "117.116232,36.67189", "name": "济南中水", "type": "3", "url": "?a=3", "id": "3" },
     ];
+    //k = "["+lnglats[0].center+"]";
+    //alert(k);
+    
     function map() {
         var map = new AMap.Map("container", { resizeEnable: true, zoom: 7 });
+
         var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+        //重新设置地图中心点坐标
+        if (lnglats.length>0) {
+            ka = lnglats[0].center.split(',')[0];
+            kb = lnglats[0].center.split(',')[1];
+            //alert(ka);
+            map.setCenter([ka,kb]);
+        }
         for (var i = 0, marker; i < lnglats.length; i++) {
-            if (lnglats[i].type == 1) {
-                var text = "<div class='mico'><img src='../img/mark_bs1.png' style='width:20px;' /><span>" + lnglats[i].name + "</span>" + "</div>";
-            } else {
+            if (lnglats[i].type == 2) {                
                 var text = "<div class='micoa'><img src='../img/mark_bs.png' style='width:20px;' /><span>" + lnglats[i].name + "</span>" + "</div>";
+            } else {
+                var text = "<div class='mico'><img src='../img/mark_bs1.png' style='width:20px;' /><span>" + lnglats[i].name + "</span>" + "</div>";
             }
             var marker = new AMap.Marker({
                 content: text,
@@ -48,28 +60,30 @@
                 type: lnglats[i].type,
                 map: map
             });
-            //marker.setCity = lnglats[i].type;
+            
             marker.content = lnglats[i].name;
             marker.type = lnglats[i].type;
             
             marker.on('click', markerClick);
+
         }
+        
         function markerClick(e) {
             infoWindow.setContent(e.target.content);
             //infoWindow.setType(e.target.type);
-            infoWindow.open(map, e.target.getPosition());
-            
-            //window.location.href = "/Default/Details?id=" + lnglats.length;
-            //alert(this);
-            
-            if(this.type==1){
+            infoWindow.open(map, e.target.getPosition());            
+            if (this.type == 1) {
                 window.location.href = "/Default/Details?name=" + this.content;
-            }else{
+            } else if (this.type == 2) {
                 window.location.href = "/Default/ecgsDetails?name=" + this.content;
+            } else {
+                window.location.href = "/Default/jnDetails?name=" + this.content;
             }
         }
-
+        
+        
     }
+    
     //搜索项目名称
     function research() {
         var opl = lnglats;
@@ -83,29 +97,34 @@
         }
         if (arr.length > 0) {
             var map_dom = "";
-            for (i = 0; i < arr.length; i++) {
+            for (i = 0; i < arr.length; i++) {                
+                //alert(arr[i].center);
                 if (arr[i].type == 1) {
                     map_dom += "<li class='ws'><img src='../img/mark_bs1.png'/><h4>" + arr[i].name + "</h4></li>";
                 } else {
-
-                    map_dom += "<li class='gs'><img src='../img/mark_bs.png'/><h4>" + arr[i].name + "</h4></li>";                }
+                    map_dom += "<li class='gs'><img src='../img/mark_bs.png'/><h4>" + arr[i].name + "</h4></li>";
+                }
                 
             }
             $(".map_sel")[0].innerHTML = map_dom;
         }
         lnglats = arr;
         map();
+        //addcenter = lnglats[0].center;
         lnglats = opl;
     }
     //输入时执行
     $("#tipinput").bind('input', function () {
+        
         research();
         //点击.map_sel li事件
         $(".map_sel li").click(function () {
             $("#tipinput")[0].value = $(this).children("h4")[0].innerHTML;
-            research();
-            $(".map_sel")[0].innerHTML = "";
+            //$(this).id = "pantoBtn";
+            research();            
+            $(".map_sel")[0].innerHTML = "";  
         })
+        
 
     });
 

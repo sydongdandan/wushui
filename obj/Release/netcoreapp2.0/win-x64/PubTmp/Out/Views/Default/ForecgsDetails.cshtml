@@ -1,10 +1,6 @@
 ﻿@{
     Layout = null;
 }
-<!-- 主泵数量 -->
-<li class="s-detail-li"><span class="run"><i>@Model.zbsl</i><br /><font>m³/h</font><p>主泵数量</p></span></li>
-<!-- 辅泵数量 -->
-<li class="s-detail-li"><span class="run"><i>@Model.fbsl</i><br /><font>m³/h</font><p>辐泵数量</p></span></li>
 <!--1#主泵-->
 @if (Model.zbsl >= 1)
 {
@@ -129,23 +125,25 @@
 <!--泵后压力-->
 <li class="s-detail-li"><span class="run"><i>@Model.po_out</i><br /><font>Mpa</font><p>泵后压力</p></span></li>
 <!--水箱水位-->
-<li class="s-detail-li"><span class="run"><i>@Model.sxsw</i><br /><font>m³</font><p>水箱水位</p></span></li>
+<li class="s-detail-li"><span class="run"><i>@Model.sxsw</i><br /><font>m</font><p>水箱水位</p></span></li>
 <!--出水瞬时流量-->
 <li class="s-detail-li"><span class="run"><i>@Model.ssll.ToString("F3")</i><br /><font>m³/h</font><p>出水瞬时流量</p></span></li>
 <!--出水累计流量-->
 <li class="s-detail-li"><span class="run"><i>@Model.ljll</i><br /><font>m³</font><p>出水累计流量</p></span></li>
+<!--累计电量-->
+<li class="s-detail-li"><span class="run"><i>@Model.ljdl</i><br /><font>kWh</font><p>累计电量</p></span></li>
 <!--电压ua-->
-<li class="s-detail-li"><span class="run"><i>@Model.ua</i><br /><font>v</font><p>电压UA</p></span></li>
+<li class="s-detail-li"><span class="run"><i>@Model.ua</i><br /><font>v</font><p>电压Uab</p></span></li>
 <!--电压ub-->
-<li class="s-detail-li"><span class="run"><i>@Model.ub</i><br /><font>v</font><p>电压UB</p></span></li>
+<li class="s-detail-li"><span class="run"><i>@Model.ub</i><br /><font>v</font><p>电压Ubc</p></span></li>
 <!--电压uc-->
-<li class="s-detail-li"><span class="run"><i>@Model.uc</i><br /><font>v</font><p>电压UC</p></span></li>
+<li class="s-detail-li"><span class="run"><i>@Model.uc</i><br /><font>v</font><p>电压Uca</p></span></li>
 <!--电量IA-->
-<li class="s-detail-li"><span class="run"><i>@Model.ia</i><br /><font>v</font><p>电量IA</p></span></li>
+<li class="s-detail-li"><span class="run"><i>@Model.ia</i><br /><font>A</font><p>电流Ia</p></span></li>
 <!--电量IB-->
-<li class="s-detail-li"><span class="run"><i>@Model.ib</i><br /><font>v</font><p>电量IB</p></span></li>
+<li class="s-detail-li"><span class="run"><i>@Model.ib</i><br /><font>A</font><p>电流Ib</p></span></li>
 <!--电量IC-->
-<li class="s-detail-li"><span class="run"><i>@Model.ic</i><br /><font>v</font><p>电量IC</p></span></li>
+<li class="s-detail-li"><span class="run"><i>@Model.ic</i><br /><font>A</font><p>电流Ic</p></span></li>
 <!--前压力-->
 @if (Model.wsgz == 1)
 {

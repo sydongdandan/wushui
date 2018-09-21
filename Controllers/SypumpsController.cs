@@ -55,10 +55,12 @@ namespace WisdomWaterServicePlatform.Controllers
 
         public ActionResult AlarmList() {
 
-            var List = _context.Syep.Where(x => x.fan1_fault==1||x.fan2_fault==1||x.hlb1_fault==1||x.hlb2_fault==1||x.tsb1_fault==1||x.tsb2_fault==1||x.wn1_fault==1||x.wn2_fault==1).ToList();
+            var List = _context.Syep.Where(x => x.fan1_fault==1||x.fan2_fault==1||x.hlb1_fault==1||x.hlb2_fault==1||x.tsb1_fault==1||x.tsb2_fault==1||x.wn1_fault==1||x.wn2_fault==1|| x.tjc_high == 1|| x.tjc_low == 1).ToList();
             var Lista = _context.Sypump.Where(x => x.kkgz_1 == 1 || x.kkgz_2 == 1 || x.kkgz_3 == 1 || x.bpgz_1 == 1 || x.bpgz_2 == 1 || x.bpgz_3 == 1 || x.fb_kkgz_1 == 1 || x.fb_bpgz_1 == 1 || x.wsgz == 1 || x.gsgz == 1 || x.jsgz == 1 || x.xxgz == 1 || x.ckcy == 1).ToList();
+            var Listb = _context.Syep_jn.Where(x => x.wnb_gz_1 == 1 || x.fj_gz_1 == 1 || x.zsb_gz_2 == 1 || x.hfc_gz_2 == 1 || x.psb_gz_2 == 1 || x.tsb_gz_2 == 1 || x.fj_gz_2 == 1 || x.yjc_dyw_bj == 1 || x.yjc_gyw_bj == 1 || x.ejc_dyw_bj == 1 || x.ejc_gyw_bj == 1 || x.qsc_dyw_bj == 1 || x.qsc_gyw_bj == 1 || x.tjc_dyw_bj == 1 || x.tjc_gyw_bj == 1 || x.jsc_dyw_bj == 1 || x.jsc_gyw_bj == 1 || x.zsb_gz_1 == 1 || x.hfc_gz_1 == 1 || x.hlb_gz_1 == 1 || x.psb_gz_1 == 1 || x.tsb_gz_1 == 1 ).ToList();
             ViewData["wushui"] = List;
             ViewData["ergong"] = Lista;
+            ViewData["jinan"] = Listb;
             return View();
         }
         /*public ActionResult ERgong(string name) {
@@ -73,8 +75,10 @@ namespace WisdomWaterServicePlatform.Controllers
                 //var List = _context.Syep.Where(x => x.fan1_fault == 1 || x.fan2_fault == 1 || x.hlb1_fault == 1 || x.hlb2_fault == 1 || x.tsb1_fault == 1 || x.tsb2_fault == 1 || x.wn1_fault == 1 || x.wn2_fault == 1).ToList();
                 var List = _context.Syep.Where(x => x.fan1_fault == 1 || x.fan2_fault == 1 || x.hlb1_fault == 1 || x.hlb2_fault == 1 || x.tsb1_fault == 1 || x.tsb2_fault == 1 || x.wn1_fault == 1 || x.wn2_fault == 1).ToList();
                 var Lista = _context.Sypump.Where(x => x.kkgz_1 == 1 || x.kkgz_2 == 1 || x.kkgz_3 == 1 || x.bpgz_1 == 1 || x.bpgz_2 == 1 || x.bpgz_3 == 1 || x.fb_kkgz_1 == 1 || x.fb_bpgz_1 == 1 || x.wsgz == 1 || x.gsgz == 1 || x.jsgz == 1 || x.xxgz == 1 || x.ckcy == 1).ToList();
+                var Listb = _context.Syep_jn.Where(x => x.wnb_gz_1 == 1 || x.fj_gz_1 == 1 || x.zsb_gz_2 == 1 || x.hfc_gz_2 == 1 || x.psb_gz_2 == 1 || x.tsb_gz_2 == 1 || x.fj_gz_2 == 1 || x.yjc_dyw_bj == 1 || x.yjc_gyw_bj == 1 || x.ejc_dyw_bj == 1 || x.ejc_gyw_bj == 1 || x.qsc_dyw_bj == 1 || x.qsc_gyw_bj == 1 || x.tjc_dyw_bj == 1 || x.tjc_gyw_bj == 1 || x.jsc_dyw_bj == 1 || x.jsc_gyw_bj == 1 || x.zsb_gz_1 == 1 || x.hfc_gz_1 == 1 || x.hlb_gz_1 == 1 || x.psb_gz_1 == 1 || x.tsb_gz_1 == 1).ToList();
                 ViewData["wushui"] = List;
                 ViewData["ergong"] = Lista;
+                ViewData["jinan"] = Listb;
                 return View();
             }
             catch (Exception e)

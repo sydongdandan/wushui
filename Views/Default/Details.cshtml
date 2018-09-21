@@ -76,6 +76,10 @@
 
         }, 8000);//8秒自动刷新
     })*/
+    var w = document.documentElement.clientWidth || document.body.clientWidth;
+    var l = parseInt(w / 56) * 56;
+    var t = parseInt((w - l) / 2) - 10;
+    $(".s-detail-ul").css({ "width": l, "top": t });
 </script>
 
 

@@ -14,6 +14,7 @@ namespace WisdomWaterServicePlatform
         }
         public DbSet<Sypump> Sypump { get; set; }
         public DbSet<Wushui> Syep { get; set; }
+        public DbSet<Syep_jn> Syep_jn { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -48,6 +48,35 @@ namespace WisdomWaterServicePlatform.Controllers
 
         }
 
+        // GET: Default/Details/5
+        public ActionResult jnDetails(string name, int id = 0)
+        {
+            if (string.IsNullOrEmpty(name))
+                return Redirect("../Sypumps/index");
+            //获取设备数据
+            var List = _context.Syep_jn.Where(x => x.id_name.Equals(name)).FirstOrDefault();
+            if (List == null) return Redirect("../Sypumps/index");
+            return View(List);
+            //return View(await _context.Sypump.ToListAsync());
+
+        }
+        public ActionResult ForjnDetails(string name, int id = 0)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(name))
+                    return Json("Erorr：项目名称为空");
+                //获取设备数据
+                var List = _context.Syep_jn.Where(x => x.id_name.Equals(name)).FirstOrDefault();
+                //return Json(List);
+                return View(List);
+            }
+            catch (Exception e)
+            {
+                return Json("Erorr：" + e.Message);
+            }
+        }
+
         public ActionResult ForDetails(string name, int id = 0)
         {
             try
@@ -64,7 +93,23 @@ namespace WisdomWaterServicePlatform.Controllers
             }
         }
 
-        
+        public ActionResult ForecgsDetails(string name, int id = 0)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(name))
+                    return Json("Erorr：项目名称为空");
+                //获取设备数据
+                var List = _context.Sypump.Where(x => x.name.Equals(name)).FirstOrDefault();
+                //return Json(List);
+                return View(List);
+            }
+            catch (Exception e)
+            {
+                return Json("Erorr：" + e.Message);
+            }
+        }
+
 
         // GET: Default/Create
         public ActionResult Create()

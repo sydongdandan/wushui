@@ -580,9 +580,9 @@ ul.d-footerul .on {
 }
 
 .s-detail-ul {
-    padding: 5px 10px;
+    padding: 5px 10px 3px;
     padding-top: 12px;
-    margin: 0px;
+    margin: 0px auto;
     vertical-align: top;
     line-height: 50px;
     position: relative;
@@ -1429,7 +1429,7 @@ ul.map_sel {
 .naveg .ergong{display:none;}
 /*.ico{display:none !important;}*/
 /*µØÍ¼°´Å¥*/
-.map-div{position:absolute;bottom:58px;left:4px;text-align:center;width:50px;}
+.map-div{position:absolute;bottom:58px;left:4px;text-align:center;width:50px;z-index:2}
 .map-div span{display:inline-block;width:40px;height:40px;background:rgba(0,0,0,.75);color:#fff;font-size:12px;line-height:38px;margin-bottom:2px;border-radius:3px;}
 .map-div span font{display:inline-block;vertical-align:middle;line-height:16px;}
     .map-div span.ico-active {

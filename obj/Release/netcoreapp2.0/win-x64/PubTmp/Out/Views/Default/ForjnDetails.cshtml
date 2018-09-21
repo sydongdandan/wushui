@@ -1,0 +1,366 @@
+﻿@{
+    Layout = null;
+}
+<!--瞬时流量1#-->
+<li class="s-detail-li"><span class="run"><i>@Model.ssll_1</i><br /><font>m³/h</font><p>瞬时流量1#</p></span></li>
+<!--累计流量1#-->
+<li class="s-detail-li"><span class="run"><i>@Model.ljll_1</i><br /><font>m³</font><p>累计流量1#</p></span></li>
+<!--PH实时检测-->
+@if (Model.ph_jc != 0)
+{
+    <li class="s-detail-li"><span class="run"><i>@Model.ph_jc</i><br /><p>PH实时检测</p></span></li>
+}
+<!--COD实时检测-->
+@if (Model.cod_jc != 0)
+{
+    <li class="s-detail-li"><span class="run"><i>@Model.cod_jc</i><br /><p>COD实时检测</p></span></li>
+}
+<!--氨氮实时检测-->
+@if (Model.ad_jc != 0)
+{
+    <li class="s-detail-li"><span class="run"><i>@Model.ad_jc</i><br /><p>氨氮实时检测</p></span></li>
+}
+<!--液位反馈-->
+<li class="s-detail-li"><span class="run"><i class="mcnum">@Model.ywfk</i><br /><font>m</font><p>膜池液位</p></span></li>
+<!--一号污泥泵运行-->
+
+@if (Model.wnb_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号污泥泵</p></span>
+    </li>
+}
+else if (Model.wnb_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号污泥泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号污泥泵</p></span>
+    </li>
+}
+
+<!--一号风机-->
+
+@if (Model.fj_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号风机</p></span>
+    </li>
+}
+else if (Model.fj_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号风机</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号风机</p></span>
+    </li>
+}
+<!--二号风机-->
+
+@if (Model.fj_gz_2 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>二号风机</p></span>
+    </li>
+}
+else if (Model.fj_yx_2 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>二号风机</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>二号风机</p></span>
+    </li>
+}
+
+<!--一号中水泵运行-->
+
+@if (Model.zsb_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号中水泵</p></span>
+    </li>
+
+}
+else if (Model.zsb_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号中水泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号中水泵</p></span>
+    </li>
+}
+<!--二号中水泵-->
+
+@if (Model.zsb_gz_2 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>二号中水泵</p></span>
+    </li>
+}
+else if (Model.zsb_yx_2 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>二号中水泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>二号中水泵</p></span>
+    </li>
+}
+
+<!--一号化粪池泵运行-->
+
+@if (Model.hfc_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号一级提升泵</p></span>
+    </li>
+
+}
+else if (Model.hfc_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号一级提升泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号一级提升泵</p></span>
+    </li>
+}
+<!--二号化粪池泵-->
+
+@if (Model.hfc_gz_2 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>二号一级提升泵</p></span>
+    </li>
+}
+else if (Model.hfc_yx_2 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>二号一级提升泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>二号一级提升泵</p></span>
+    </li>
+}
+
+<!--一号排水泵运行-->
+
+@if (Model.psb_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号排水泵</p></span>
+    </li>
+
+}
+else if (Model.psb_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号排水泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号排水泵</p></span>
+    </li>
+}
+
+<!--二号排水泵-->
+
+@if (Model.psb_gz_2 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>二号排水泵</p></span>
+    </li>
+}
+else if (Model.psb_yx_2 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>二号排水泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>二号排水泵</p></span>
+    </li>
+}
+<!--一号提升泵运行-->
+
+@if (Model.tsb_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号二级提升泵</p></span>
+    </li>
+}
+else if (Model.tsb_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号二级提升泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号二级提升泵</p></span>
+    </li>
+}
+
+<!--二号提升泵-->
+
+@if (Model.tsb_gz_2 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>二号二级提升泵</p></span>
+    </li>
+}
+else if (Model.tsb_yx_2 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>二号二级提升泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>二号二级提升泵</p></span>
+    </li>
+}
+
+
+<!--一号MBR泵运行-->
+
+@if (Model.mbr_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号自吸泵</p></span>
+    </li>
+
+}
+else if (Model.mbr_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号自吸泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号自吸泵</p></span>
+    </li>
+}
+
+
+
+<!--一号回流泵运行-->
+
+@if (Model.hlb_yx_1 == 1)
+{
+    <li class="s-detail-li run">
+        <span class=""><i>运行</i><br /><p>一号回流泵</p></span>
+    </li>
+
+}
+else if (Model.hlb_gz_1 == 1)
+{
+    <li class="s-detail-li alarm">
+        <span class=""><i>故障</i><br /><p>一号回流泵</p></span>
+    </li>
+}
+else
+{
+    <li class="s-detail-li stop">
+        <span class=""><i>停止</i><br /><p>一号回流泵</p></span>
+    </li>
+}
+
+<!--一级池低液位报警-->
+@if (Model.yjc_dyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过低</i><br /><p>一级池</p></span></li>
+}
+<!--一级池高液位报警-->
+@if (Model.yjc_gyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过高</i><br /><p>一级池</p></span></li>
+}
+<!--二级池低液位报警-->
+@if (Model.ejc_dyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过低</i><br /><p>二级池</p></span></li>
+}
+<!--二级池高液位报警-->
+@if (Model.ejc_gyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过高</i><br /><p>二级池</p></span></li>
+}
+<!--清水池低液位报警-->
+@if (Model.qsc_dyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过低</i><br /><p>清水池</p></span></li>
+}
+<!--清水池高液位报警-->
+@if (Model.qsc_gyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过高</i><br /><p>清水池</p></span></li>
+}
+<!--调节池低液位报警-->
+@if (Model.tjc_dyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过低</i><br /><p>调节池</p></span></li>
+}
+<!--调节池高液位报警-->
+@if (Model.tjc_gyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过高</i><br /><p>调节池</p></span></li>
+}
+<!--集水池低液位报警-->
+@if (Model.jsc_dyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过低</i><br /><p>集水池</p></span></li>
+}
+<!--集水池高液位报警-->
+@if (Model.jsc_gyw_bj == 1)
+{
+    <li class="s-detail-li alarm"><span class=""><i>液位过高</i><br /><p>集水池</p></span></li>
+}
+
+
+
+<script>
+
+    function PH() {
+        var mc = $(".mcnum")[0].innerHTML;
+        //var yw = $(".ywnum")[0].innerHTML;
+        //alert(ph);
+        $(".mcnum")[0].innerHTML = (mc - 0) / 100;
+        //$(".ywnum")[0].innerHTML = (yw - 0) / 1000;
+    }
+    PH();
+</script>
+

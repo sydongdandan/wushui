@@ -205,11 +205,159 @@
 
                 </p>
             }
-            
+
 
         </a>
 
 
     </li>
 
+}
+<!--济南-->
+@foreach (var j in ViewData["jinan"] as IEnumerable<Syep_jn>)
+{
+    <li class="w-listli wushui">
+
+        <a href="#">
+            <h3 class="wlisth3">
+                @j.id_name
+                <!--<i class="wlistcare">有任务</i>-->
+            </h3>
+            <!-- 一号回流泵 -->
+            @if (j.wnb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号污泥泵故障</font><br />
+                </p>
+            }
+            @if (j.fj_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号风机故障</font><br />
+                </p>
+            }
+            @if (j.zsb_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号中水泵故障</font><br />
+                </p>
+            }
+            @if (j.hfc_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号化粪池泵故障</font><br />
+                </p>
+            }
+            @if (j.psb_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号排水泵故障</font><br />
+                </p>
+            }
+            @if (j.tsb_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号提升泵故障</font><br />
+                </p>
+            }
+            @if (j.fj_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号风机故障</font><br />
+                </p>
+            }
+            @if (j.yjc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一级池低液位报警</font><br />
+                </p>
+            }
+            @if (j.yjc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一级池高液位报警</font><br />
+                </p>
+            }
+            @if (j.ejc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二级池低液位报警</font><br />
+                </p>
+            }
+            @if (j.ejc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二级池高液位报警</font><br />
+                </p>
+            }@if (j.qsc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>清水池低液位报警</font><br />
+                </p>
+            }
+            @if (j.qsc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>清水池高液位报警</font><br />
+                </p>
+            }
+            @if (j.tjc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>调节池低液位报警</font><br />
+                </p>
+            }
+            @if (j.tjc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>调节池高液位报警</font><br />
+                </p>
+            }
+            @if (j.jsc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>集水池低液位报警</font><br />
+                </p>
+            }
+            @if (j.jsc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>集水池高液位报警</font><br />
+                </p>
+            }
+
+            @if (j.zsb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号中水泵故障</font><br />
+                </p>
+            }
+            @if (j.hfc_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号化粪池泵故障</font><br />
+                </p>
+            }
+            @if (j.hlb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号回流泵故障</font><br />
+                </p>
+            }
+            @if (j.psb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号排水泵故障</font><br />
+                </p>
+            }
+            @if (j.tsb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号提升泵故障</font><br />
+                </p>
+            }
+        </a>
+
+
+    </li>
 }
