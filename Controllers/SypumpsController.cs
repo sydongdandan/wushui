@@ -34,6 +34,7 @@ namespace WisdomWaterServicePlatform.Controllers
         // GET: Sypumps/Register
         //public IActionResult toLogin()
         //{
+
             
         //    return View(response.Redirect("/Sypumps/Login", true));
         //}

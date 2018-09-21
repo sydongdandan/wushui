@@ -489,7 +489,7 @@ namespace WisdomWaterServicePlatform.Models
 
         public void Check() {
             if (this.update_day == null) {
-                String msg = String.Format("数据更新日期不可为空。");
+                String msg = String.Format("数据更新日期 不可为空。");
                 throw new ArgumentException(msg);
             }
             if (this.update_time == null)

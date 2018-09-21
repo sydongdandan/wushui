@@ -1,0 +1,363 @@
+﻿@{
+    Layout = null;
+}
+
+
+@foreach (var w in ViewData["wushui"] as IEnumerable<Wushui>)
+{
+    <li class="w-listli wushui">
+
+        <a href="#">
+            <h3 class="wlisth3">
+                @w.id_name
+                <!--<i class="wlistcare">有任务</i>-->
+            </h3>
+            <!-- 一号回流泵 -->
+            @if (w.hlb1_fault == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号回流泵</font><br />
+
+                </p>
+            }
+
+            <!-- 一号提升泵 -->
+            @if (w.tsb1_fault == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号提升泵</font><br />
+
+                </p>
+            }
+
+            <!-- 一号污泥泵 -->
+            @if (w.wn1_fault == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号污泥泵</font><br />
+
+                </p>
+            }
+
+            <!-- 一号风机 -->
+            @if (w.fan1_fault == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号风机</font><br />
+
+                </p>
+            }
+
+            <!-- 二号回流泵 -->
+            @if (w.hlb2_fault == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号回流泵</font><br />
+
+                </p>
+            }
+
+            <!-- 二号提升泵 -->
+            @if (w.tsb2_fault == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号提升泵</font><br />
+
+                </p>
+            }
+
+            <!-- 调节池低液位报警S01 -->
+            @if (w.tjc_low == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>调节池液位低</font><br />
+
+                </p>
+            }
+
+            <!-- 调节池高液位报警S01 -->
+            @if (w.tjc_high == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>调节池液位高</font><br />
+
+                </p>
+            }
+
+
+
+        </a>
+
+
+    </li>
+
+}
+@foreach (var w in ViewData["ergong"] as IEnumerable<Sypump>)
+{
+    <li class="w-listli ergong">
+
+        <a href="#">
+            <h3 class="wlisth3">
+                @w.name
+                <!--<i class="wlistcare">有任务</i>-->
+            </h3>
+            <!-- 1#空开跳闸 -->
+            @if (w.kkgz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>1#空开跳闸</font><br />
+
+                </p>
+            }
+            <!-- 1#变频故障 -->
+            @if (w.bpgz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>1#变频故障</font><br />
+
+                </p>
+            }
+            <!-- 2#空开跳闸 -->
+            @if (w.bpgz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>2#空开跳闸</font><br />
+
+                </p>
+            }
+            <!-- 2#变频故障 -->
+            @if (w.bpgz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>2#空开跳闸</font><br />
+
+                </p>
+            }
+            <!-- 3#空开跳闸 -->
+            @if (w.kkgz_3 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>3#空开跳闸</font><br />
+
+                </p>
+            }
+            <!-- 3#变频故障 -->
+            @if (w.bpgz_3 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>3#变频故障</font><br />
+
+                </p>
+            }
+            <!-- 辅泵空开跳闸 -->
+            @if (w.fb_kkgz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>辅泵空开跳闸</font><br />
+
+                </p>
+            }
+            <!-- 辅泵变频故障 -->
+            @if (w.fb_bpgz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>辅泵变频故障</font><br />
+
+                </p>
+            }
+            <!-- 无水故障 -->
+            @if (w.wsgz == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>无水故障</font><br />
+
+                </p>
+            }
+            <!-- 高水故障 -->
+            @if (w.gsgz == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>高水故障</font><br />
+
+                </p>
+            }
+            <!-- 地面积水故障 -->
+            @if (w.jsgz == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>地面积水故障</font><br />
+
+                </p>
+            }
+            <!-- 相序故障 -->
+            @if (w.xxgz == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>相序故障</font><br />
+
+                </p>
+            }
+            <!-- 出口超压 -->
+            @if (w.ckcy == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>出口超压</font><br />
+
+                </p>
+            }
+
+
+        </a>
+
+
+    </li>
+
+}
+<!--济南-->
+@foreach (var j in ViewData["jinan"] as IEnumerable<Syep_jn>)
+{
+    <li class="w-listli wushui">
+
+        <a href="#">
+            <h3 class="wlisth3">
+                @j.id_name
+                <!--<i class="wlistcare">有任务</i>-->
+            </h3>
+            <!-- 一号回流泵 -->
+            @if (j.wnb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号污泥泵故障</font><br />
+                </p>
+            }
+            @if (j.fj_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号风机故障</font><br />
+                </p>
+            }
+            @if (j.zsb_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号中水泵故障</font><br />
+                </p>
+            }
+            @if (j.hfc_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号化粪池泵故障</font><br />
+                </p>
+            }
+            @if (j.psb_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号排水泵故障</font><br />
+                </p>
+            }
+            @if (j.tsb_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号提升泵故障</font><br />
+                </p>
+            }
+            @if (j.fj_gz_2 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二号风机故障</font><br />
+                </p>
+            }
+            @if (j.yjc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一级池低液位报警</font><br />
+                </p>
+            }
+            @if (j.yjc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一级池高液位报警</font><br />
+                </p>
+            }
+            @if (j.ejc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二级池低液位报警</font><br />
+                </p>
+            }
+            @if (j.ejc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>二级池高液位报警</font><br />
+                </p>
+            }@if (j.qsc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>清水池低液位报警</font><br />
+                </p>
+            }
+            @if (j.qsc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>清水池高液位报警</font><br />
+                </p>
+            }
+            @if (j.tjc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>调节池低液位报警</font><br />
+                </p>
+            }
+            @if (j.tjc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>调节池高液位报警</font><br />
+                </p>
+            }
+            @if (j.jsc_dyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>集水池低液位报警</font><br />
+                </p>
+            }
+            @if (j.jsc_gyw_bj == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>集水池高液位报警</font><br />
+                </p>
+            }
+
+            @if (j.zsb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号中水泵故障</font><br />
+                </p>
+            }
+            @if (j.hfc_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号化粪池泵故障</font><br />
+                </p>
+            }
+            @if (j.hlb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号回流泵故障</font><br />
+                </p>
+            }
+            @if (j.psb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号排水泵故障</font><br />
+                </p>
+            }
+            @if (j.tsb_gz_1 == 1)
+            {
+                <p class="wlistp">
+                    <font style="color:#ff0000"><b>故障：</b>一号提升泵故障</font><br />
+                </p>
+            }
+        </a>
+
+
+    </li>
+}

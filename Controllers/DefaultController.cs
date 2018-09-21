@@ -20,7 +20,6 @@ namespace WisdomWaterServicePlatform.Controllers
         {
             return View();
         }
-
         // GET: Default/Details/5
         public ActionResult Details(string name, int id=0)
         {
