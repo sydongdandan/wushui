@@ -38,16 +38,16 @@
     //alert(k);
     
     function map() {
-        var map = new AMap.Map("container", { resizeEnable: true, zoom: 7 });
+        var map = new AMap.Map("container", { resizeEnable: true, zoom: 6, center: [117.154395, 34.267109]});
 
         var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
         //重新设置地图中心点坐标
-        if (lnglats.length>0) {
-            ka = lnglats[0].center.split(',')[0];
-            kb = lnglats[0].center.split(',')[1];
+        //if (lnglats.length>0) {
+        //    ka = lnglats[0].center.split(',')[0];
+        //    kb = lnglats[0].center.split(',')[1];
             //alert(ka);
-            map.setCenter([ka,kb]);
-        }
+        //    map.setCenter([ka,kb]);
+        //}
         for (var i = 0, marker; i < lnglats.length; i++) {
             if (lnglats[i].type == 2) {                
                 var text = "<div class='micoa'><img src='../img/mark_bs.png' style='width:20px;' /><span>" + lnglats[i].name + "</span>" + "</div>";
